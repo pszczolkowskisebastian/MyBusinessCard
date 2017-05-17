@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
-    let data = ["O mnie", "Czym się zajmuję", "Moje pasje"]
-    let dataForTextView = ["tak", "nie", "nie wiem"]
+    let data = ["O mnie", "Moje doświadczenie", "Moje pasje"]
+    let dataForTextView = ["Nazywam się Sebastian Pszczółkowski. Jestem Studentem Polsko-Japońskiej Akademii Technik Komputerowych w Warszawie. Moja przygoda z programowaniem zaczęła się w technikum. Od tamtego czasu prężnie rozwijam swoje umiejętności ucząc się różnych jezyków programowania. Swift stał się tym, z któtym chciałbym związać się na dłużej. Stąd też moja aplikacja do Summer e-Xperience o którym słyszałem wiele dobrego.", "Jakby to powiedzieć, jest to poczatek mojej drogi w programowaniu na urzadzenia z systemem iOS. W przeszłości miałem okazje programować w jezykach takich jak Java, C++, C, C#, jednak żaden nie skradł mojego serca tak jak Swift. Uczę sie go od kilku miesięcy, na początku oglądajac tutoriale i starając sie", "nie wiem"]
     
     var views = [UIView]()
     var animator:UIDynamicAnimator!
