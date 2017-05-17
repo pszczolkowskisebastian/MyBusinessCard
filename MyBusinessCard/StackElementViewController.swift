@@ -11,11 +11,23 @@ import UIKit
 class StackElementViewController: UIViewController {
 
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var viewText: UITextView!
+
 
     var headerString:String? {
         didSet {
             configureView()
         }
+    }
+    
+    var viewString : String? {
+        didSet{
+            configureText()
+        }
+    }
+    
+    func configureText() {
+        viewText.text = viewString
     }
     
     func configureView() {

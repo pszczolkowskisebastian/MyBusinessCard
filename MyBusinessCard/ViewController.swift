@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     let data = ["O mnie", "Czym się zajmuję", "Moje pasje"]
+    let dataForTextView = ["tak", "nie", "nie wiem"]
     
     var views = [UIView]()
     var animator:UIDynamicAnimator!
@@ -33,17 +34,15 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
         var offset:CGFloat = 250
         
         for i in 0 ... data.count - 1 {
-            if let view = addViewController(atOffset: offset, dataForVC: data[i] as AnyObject) {
+            
+          if let view = addViewController(atOffset: offset, dataForVC: data[i] as AnyObject, textForTextView: dataForTextView[i] as AnyObject) {
                 views.append(view)
                 offset -= 50
             }
         }
-        
-        
-        
     }
-    
-    func addViewController (atOffset offset:CGFloat, dataForVC data:AnyObject?) -> UIView? {
+
+    func addViewController (atOffset offset:CGFloat, dataForVC data:AnyObject?, textForTextView text: AnyObject?) -> UIView? {
         
         let frameForView = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
@@ -61,6 +60,10 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             
             if let headerStr = data as? String {
                 stackElementVC.headerString = headerStr
+            }
+            
+            if let textForView = text as? String{
+                stackElementVC.viewString = textForView
             }
             
             
@@ -91,25 +94,18 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             boundaryEnd = CGPoint(x: self.view.bounds.size.width, y: 0)
             collision.addBoundary(withIdentifier: 2 as NSCopying, from: boundaryStart, to: boundaryEnd)
             
-            
             gravity.addItem(view)
-            
             
             let itemBehavior = UIDynamicItemBehavior(items: [view])
             animator.addBehavior(itemBehavior)
             
             return view
             
-            
         }
         
         return nil
         
-        
     }
-    
-    
-    
     
     func handlePan (gestureRecognizer:UIPanGestureRecognizer) {
         
@@ -138,8 +134,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             viewDragging = false
             
         }
-        
-        
     }
     
     
@@ -158,10 +152,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                 setVisibility(view: view, alpha: 0)
                 
                 viewPinned = true
-                
-                
+            
             }
-        }else{
+        } else {
             if viewPinned {
                 animator.removeBehavior(snap)
                 setVisibility(view: view, alpha: 1)
