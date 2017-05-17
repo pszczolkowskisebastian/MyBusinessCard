@@ -1,94 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes>
-        <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
-            <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTE-LN-xdl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="424"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sebastian Pszczółkowski" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc1-rU-kr5">
-                                <rect key="frame" x="16" y="57" width="286" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="VTE-LN-xdl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="9tY-IO-9UG"/>
-                            <constraint firstItem="VTE-LN-xdl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="Ex7-UB-z0m"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="VTE-LN-xdl" secondAttribute="bottom" constant="243" id="dS3-ri-Vn8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VTE-LN-xdl" secondAttribute="trailing" constant="-16" id="shO-yY-JU5"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
-        </scene>
-        <!--Stack Element View Controller-->
-        <scene sceneID="fiU-AJ-qTU">
-            <objects>
-                <viewController storyboardIdentifier="StackElement" id="GKH-Vq-JQ5" customClass="StackElementViewController" customModule="MyBusinessCard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TIB-tT-iga"/>
-                        <viewControllerLayoutGuide type="bottom" id="Lu3-Rp-qBc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="o5e-gm-2zZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KR9-Oh-Fib">
-                                <rect key="frame" x="16" y="20" width="65" height="29"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8pJ-if-uBV">
-                                <rect key="frame" x="16" y="57" width="343" height="199"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Lu3-Rp-qBc" firstAttribute="top" secondItem="8pJ-if-uBV" secondAttribute="bottom" constant="411" id="2Hr-pH-2H7"/>
-                            <constraint firstItem="KR9-Oh-Fib" firstAttribute="top" secondItem="TIB-tT-iga" secondAttribute="bottom" id="ANA-bB-79P"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8pJ-if-uBV" secondAttribute="trailing" id="CEa-sB-AOC"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="8pJ-if-uBV" secondAttribute="leading" id="Ouz-4T-gM3"/>
-                            <constraint firstItem="8pJ-if-uBV" firstAttribute="top" secondItem="KR9-Oh-Fib" secondAttribute="bottom" constant="8" id="P4K-EF-DSF"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="KR9-Oh-Fib" secondAttribute="leading" id="Y92-Xi-ihp"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="headerLabel" destination="KR9-Oh-Fib" id="n5F-oL-MYg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5pT-UR-iu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="727.20000000000005" y="374.66266866566718"/>
-        </scene>
-    </scenes>
+    <scenes/>
 </document>
