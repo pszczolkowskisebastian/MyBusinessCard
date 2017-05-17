@@ -12,7 +12,6 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     let data = ["O mnie", "Czym się zajmuję", "Moje pasje"]
     
-    
     var views = [UIView]()
     var animator:UIDynamicAnimator!
     var gravity:UIGravityBehavior!
@@ -40,16 +39,18 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
         
+        
+        
     }
     
     func addViewController (atOffset offset:CGFloat, dataForVC data:AnyObject?) -> UIView? {
         
         let frameForView = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let stackElementVC = sb.instantiateViewController(withIdentifier: "StackElement") as! StackElementViewController
         
-        if let stackElementVC = storyBoard.instantiateViewController(withIdentifier: "StackElement") as? StackElementViewController {
-            
+        if let view = stackElementVC.view {
             view.frame = frameForView
             view.layer.cornerRadius = 5
             view.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -67,8 +68,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             self.view.addSubview(view)
             stackElementVC.didMove(toParentViewController: self)
             
-            let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handlePan(gestureRecoginzer:)))
+            
+            
+            let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handlePan(gestureRecognizer:)))
             view.addGestureRecognizer(panGestureRecognizer)
+            
             
             let collision = UICollisionBehavior(items: [view])
             collision.collisionDelegate = self
@@ -96,22 +100,127 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
             
             return view
             
+            
         }
         
         return nil
         
-    }
-    
-    func handlePan (gestureRecoginzer:UIGestureRecognizer) {
         
     }
     
-
+    
+    
+    
+    func handlePan (gestureRecognizer:UIPanGestureRecognizer) {
+        
+        let touchPoint = gestureRecognizer.location(in: self.view)
+        let draggedView = gestureRecognizer.view!
+        
+        if gestureRecognizer.state == .began {
+            let dragStartPoint = gestureRecognizer.location(in: draggedView)
+            
+            if dragStartPoint.y < 200 {
+                viewDragging = true
+                previousTouchPoint = touchPoint
+            }
+            
+        } else if gestureRecognizer.state == .changed && viewDragging {
+            let yOffset = previousTouchPoint.y - touchPoint.y
+            
+            draggedView.center = CGPoint(x: draggedView.center.x, y: draggedView.center.y - yOffset)
+            previousTouchPoint = touchPoint
+        }else if gestureRecognizer.state == .ended && viewDragging {
+            
+            pin(view: draggedView)
+            addVelocity(toView: draggedView, fromGestureRecognizer: gestureRecognizer)
+            
+            animator.updateItem(usingCurrentState: draggedView)
+            viewDragging = false
+            
+        }
+        
+        
+    }
+    
+    
+    func pin (view:UIView) {
+        
+        let viewHasReachedPinLocation = view.frame.origin.y < 100
+        
+        if viewHasReachedPinLocation {
+            if !viewPinned {
+                var snapPosition = self.view.center
+                snapPosition.y += 30
+                
+                snap = UISnapBehavior(item: view, snapTo: snapPosition)
+                animator.addBehavior(snap)
+                
+                setVisibility(view: view, alpha: 0)
+                
+                viewPinned = true
+                
+                
+            }
+        }else{
+            if viewPinned {
+                animator.removeBehavior(snap)
+                setVisibility(view: view, alpha: 1)
+                viewPinned = false
+            }
+        }
+        
+        
+    }
+    
+    func setVisibility (view:UIView, alpha:CGFloat) {
+        for aView in views {
+            if aView != view {
+                aView.alpha = alpha
+            }
+        }
+    }
+    
+    
+    
+    func addVelocity (toView view:UIView, fromGestureRecognizer panGesture:UIPanGestureRecognizer) {
+        var velocity = panGesture.velocity(in: self.view)
+        velocity.x = 0
+        
+        if let behavior = itemBehavior(forView: view) {
+            behavior.addLinearVelocity(velocity, for: view)
+        }
+        
+        
+    }
+    
+    
+    func itemBehavior (forView view:UIView) -> UIDynamicItemBehavior? {
+        for behavior in animator.behaviors {
+            if let itemBehavior = behavior as? UIDynamicItemBehavior {
+                if let possibleView = itemBehavior.items.first as? UIView, possibleView == view {
+                    return itemBehavior
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item: UIDynamicItem, withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint) {
+        
+        if NSNumber(integerLiteral: 2).isEqual(identifier) {
+            let view = item as! UIView
+            pin(view: view)
+        }
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-

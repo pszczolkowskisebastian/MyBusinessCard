@@ -1,82 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tbA-qK-Ndb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="ZOA-7g-QeT">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyBusinessCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tbA-qK-Ndb" customClass="ViewController" customModule="MyBusinessCard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="fYN-Hm-7vc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tzs-eY-sJI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="b8T-HC-s5o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4Q-jU-ALD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lre-Hy-HUN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="424"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeg-IQ-oQk">
-                                <rect key="frame" x="16" y="43" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sebastian Pszczółkowski" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUd-0W-Wn0">
+                                <rect key="frame" x="16" y="50" width="343" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WUd-0W-Wn0" firstAttribute="top" secondItem="fYN-Hm-7vc" secondAttribute="bottom" constant="30" id="5Bt-Gd-bu1"/>
+                            <constraint firstItem="lre-Hy-HUN" firstAttribute="leading" secondItem="b8T-HC-s5o" secondAttribute="leadingMargin" constant="-16" id="CMu-gj-ogq"/>
+                            <constraint firstItem="lre-Hy-HUN" firstAttribute="top" secondItem="fYN-Hm-7vc" secondAttribute="bottom" constant="-20" id="SO1-v2-Mgc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lre-Hy-HUN" secondAttribute="trailing" constant="-16" id="c9x-z2-PLg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WUd-0W-Wn0" secondAttribute="trailing" id="m8u-aO-PHf"/>
+                            <constraint firstItem="Tzs-eY-sJI" firstAttribute="top" secondItem="lre-Hy-HUN" secondAttribute="bottom" constant="243" id="qWh-VO-9pj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="WUd-0W-Wn0" secondAttribute="leading" id="xCn-Dk-DE9"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixp-iB-iFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+            <point key="canvasLocation" x="51.5" y="374.5"/>
         </scene>
         <!--Stack Element View Controller-->
-        <scene sceneID="SVo-pN-qtf">
+        <scene sceneID="4Jz-nt-7za">
             <objects>
-                <viewController storyboardIdentifier="StackElement" id="jcb-LR-wzC" customClass="StackElementViewController" customModule="MyBusinessCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StackElement" id="qYA-wg-KQy" customClass="StackElementViewController" customModule="MyBusinessCard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Iig-v2-dio"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qzu-CD-Q6q"/>
+                        <viewControllerLayoutGuide type="top" id="kCi-Vb-0Gc"/>
+                        <viewControllerLayoutGuide type="bottom" id="J6d-f4-aEl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="C2G-iG-v0E">
+                    <view key="view" contentMode="scaleToFill" id="UUS-uv-b0A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-Jd-JNM">
-                                <rect key="frame" x="16" y="20" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="09m-8y-aap">
-                                <rect key="frame" x="16" y="63" width="343" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oeS-xe-36z">
+                                <rect key="frame" x="16" y="63" width="343" height="584"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPa-cE-iux">
+                                <rect key="frame" x="16" y="28" width="65" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86656421422958374" green="0.71159934997558594" blue="0.54641836881637573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="oeS-xe-36z" secondAttribute="leading" id="6pz-1P-5aj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oeS-xe-36z" secondAttribute="trailing" id="Gcn-KD-qw0"/>
+                            <constraint firstItem="oeS-xe-36z" firstAttribute="top" secondItem="mPa-cE-iux" secondAttribute="bottom" constant="6" id="M1l-FS-zgX"/>
+                            <constraint firstItem="J6d-f4-aEl" firstAttribute="top" secondItem="oeS-xe-36z" secondAttribute="bottom" constant="20" id="dR8-xI-YsK"/>
+                            <constraint firstItem="mPa-cE-iux" firstAttribute="top" secondItem="kCi-Vb-0Gc" secondAttribute="bottom" constant="8" id="y06-FD-TBl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mPa-cE-iux" secondAttribute="leading" id="yuE-Nc-5o3"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="headerLabel" destination="bfb-Jd-JNM" id="en9-7T-c02"/>
+                        <outlet property="headerLabel" destination="mPa-cE-iux" id="kkd-8u-ffB"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbd-s4-Zub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZE-PO-CW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839.20000000000005" y="36.431784107946029"/>
+            <point key="canvasLocation" x="725.60000000000002" y="373.76311844077964"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1604" height="1604"/>
+    </resources>
 </document>
